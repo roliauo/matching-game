@@ -1,0 +1,46 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  line-height: 150px;
+  margin: 4px;
+  color: #444;
+  transition: all 1s;
+  transform-style: preserve-3d; // very important
+
+  &.stop {
+    pointer-events: none;
+  }
+
+  &.reverse {
+    transform: rotateY(180deg);
+  }
+
+  &.hover:hover {
+    transform: rotateY(0.5turn);
+  }
+
+  .side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    pointer-events: none;
+    border: 1px solid #999;
+    border-radius: 4px;
+
+    &.front {
+      background-color: #6759b6;      
+    }
+    &.back {
+      transform: rotateY(0.5turn);
+    }
+  }
+}
